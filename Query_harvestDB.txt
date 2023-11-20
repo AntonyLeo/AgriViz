@@ -1,0 +1,41 @@
+CREATE DATABASE harvest;
+USE harvest;
+CREATE TABLE field (
+  field_id double,
+  field_name varchar(30),
+  PRIMARY KEY (field_id),
+  KEY `Key` (field_name)
+);
+CREATE TABLE carrito (
+  cart_id int,
+  date Date,
+  field_id double,
+  KEY `Key` (date, cart_id),
+  FOREIGN KEY (field_id) REFERENCES field (field_id) ON DELETE SET NULL
+);
+CREATE TABLE picker (
+  field_id double,
+  date Date,
+  name varchar(40),
+  collected_trays double,
+  cart_id int,
+  KEY `Key` (date, name, collected_trays, cart_id),
+  FOREIGN KEY (field_id) REFERENCES field (field_id) ON DELETE SET NULL
+);
+CREATE TABLE raw_data(
+  field_id double,
+  date varchar(30), 
+  cart_id int,
+  universal_time double,
+  GPS_TOW double,
+  LAT double,
+  LON double, 
+  HEIGHT double,
+  ax double,
+  ay double,
+  az double,
+  filtered_mass double,
+  raw_mass double,
+  KEY `Key` (date, cart_id, universal_time, GPS_TOW, LAT, LON, HEIGHT, ax, ay, az, filtered_mass, raw_mass),
+  FOREIGN KEY (field_id) REFERENCES field (field_id) ON DELETE SET NULL
+);
