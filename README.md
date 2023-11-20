@@ -35,3 +35,4 @@ The front end is a user-friendly web application which is created by Python Flas
   * Run command: **set FLASK_DEBUG=1**
   * Run command: **flask run**
 
+These steps should make the Front-end up and running 
