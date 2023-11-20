@@ -16,3 +16,7 @@ The front end is a user-friendly web application which is created by Python Flas
     * layout.html - HTML file to design the home page
     * profile.html - HTML file to design the profile page
     * register.html - HTML file to design the register page
+* Query_harvestDB - MYSQL queries to create the harvest database
+* Query_processedDB - MYSQL queries to create the processed database
+* Query_pythonlogin - MYSQL queries to create the login database (Stores user information)
+* 
