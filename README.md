@@ -38,7 +38,7 @@ The front end is a user-friendly web application which is created by Python Flas
   * Run command: **set FLASK_DEBUG=1**
   * Run command: **flask run**
 
-These steps should make the Front-end up and running 
+These steps should get the front-end up and running 
 
 # Back-end
 
@@ -46,3 +46,5 @@ These steps should make the Front-end up and running
 * Once you have the databases created, run picker_to_DB.py, carts_to_DB.py, and raw_data_to_DB.py python files to upload the data obtained from the harvest to their respective tables in the Harvest database.
 * Once the database is all set and populated, run select_inputs.py python file to select the appropriate inputs needed to run the yield map generation code
 * Once the yield maps are generated, run processed_data.py python file to upload the generated yield map into the proces table in the processed database and also to create a table locally.
+
+These steps should get the back-end up and running
