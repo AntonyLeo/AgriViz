@@ -34,3 +34,7 @@ The front end is a user-friendly web application which is created by Python Flas
   * Run command: **set FLASK_APP=app.py**
   * Run command: **set FLASK_DEBUG=1**
   * Run command: **flask run**
+  * Run <p align="center">
+  <img src="https://img.shields.io/badge/flask run-Background%20Color.svg?style=for-the-badge&logo=appveyor&colorA=000000&colorB=111111"/>
+</p>
+
