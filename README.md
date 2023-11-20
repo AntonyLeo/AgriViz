@@ -19,8 +19,11 @@ The front end is a user-friendly web application which is created by Python Flas
 * Query_harvestDB - MYSQL queries to create the harvest database
 * Query_processedDB - MYSQL queries to create the processed database
 * Query_pythonlogin - MYSQL queries to create the login database (Stores user information)
-* as
-* awa
+* picker_to_DB.py - Python file to upload picker data into the picker table in the harvest database
+* carts_to_DB.py - Python file to upload cart data into the cart table in the harvest database
+* raw_data_to_DB.py - Python file to upload raw data into the raw_data table in the harvest database
+* select_inputs.py - Python code to select the appropriate inputs needed to run the yield map generation code
+* processed_data.py - Python code to upload the generated yield map into the proces table in the processed database 
 
 # Front-end
 
@@ -38,3 +41,8 @@ The front end is a user-friendly web application which is created by Python Flas
 These steps should make the Front-end up and running 
 
 # Back-end
+
+* Run Query_harvest_DB and Query_processed_DB in MYSQL Workbench to create the Harvest and Processed databases.
+* Once you have the databases created, run picker_to_DB.py, carts_to_DB.py, and raw_data_to_DB.py python files to upload the data obtained from the harvest to their respective tables in the Harvest database.
+* Once the database is all set and populated, run select_inputs.py python file to select the appropriate inputs needed to run the yield map generation code
+* Once the yield maps are generated, run processed_data.py python file to upload the generated yield map into the proces table in the processed database and also to create a table locally.
