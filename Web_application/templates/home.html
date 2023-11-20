@@ -1,0 +1,124 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+    .button-container {
+        text-align: center;
+    }
+
+    .download-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px 5px;
+        cursor: pointer;
+    }
+
+    .visualize-button {
+        background-color: #008CBA;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px 5px;
+        cursor: pointer;
+    }
+</style>
+
+<h2>Home Page</h2>
+<p>Welcome back, {{ username }}!</p>
+
+<form action="{{ url_for('display_data') }}" method="post">
+    <label for="field">Please pick a field:</label>
+    <select name="field" id="field" required>
+        <option value="" disabled selected>Select One</option>
+        <option value="Salinas">Salinas</option>
+        <option value="Santa Maria">Santa Maria</option>
+    </select>
+
+    <label for="from_date">From Date:</label>
+    <input type="date" name="from_date" id="from_date">
+    
+    <label for="to_date">To Date:</label>
+    <input type="date" name="to_date" id="to_date">
+
+    <label for="year">Please select a Year:</label>
+    <select name="year" id="year" required>
+        <option value="" disabled selected>Select One</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
+
+<div class="container">
+    {% if data %}
+    <h2>Data from Table</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Field ID</th>
+                <th>Date</th>
+                <th>cart ID</th>
+                <th>utc_time</th>
+                <th>LAT</th>
+                <th>LON</th>
+                <th>HEIGHT</th>
+                <th>ax</th>
+                <th>ay</th>
+                <th>az</th>
+                <th>filtered_mass</th>
+                <th>raw_mass</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.field_id }}</td>
+                <td>{{ item.date }}</td>
+                <td>{{ item.cart_id }}</td>
+                <td>{{ item.universal_time }}</td>
+                <td>{{ item.LAT }}</td>
+                <td>{{ item.LON }}</td>
+                <td>{{ item.HEIGHT }}</td>
+                <td>{{ item.ax }}</td>
+                <td>{{ item.ay }}</td>
+                <td>{{ item.az }}</td>
+                <td>{{ item.filtered_mass }}</td>
+                <td>{{ item.raw_mass }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="buttons">
+        <form action="/download_data" method="POST">
+            <input type="hidden" name="field" value="{{ field }}">
+            <input type="hidden" name="year" value="{{ year }}">
+            <input type="hidden" name="from_date" value="{{ from_date }}">
+            <input type="hidden" name="to_date" value="{{ to_date }}">
+            <button type="submit" class="btn btn-primary">Download</button>
+        </form>
+        &nbsp;&nbsp;  
+        <form action="/visualize_data" method="POST">
+            <button type="submit" class="btn btn-success">Visualize</button>
+        </form>        
+    </div>
+
+    {%else %}
+    <div>{{ no_data_message }}</div>
+    {% endif %}
+</div>
+
+{% endblock %}
