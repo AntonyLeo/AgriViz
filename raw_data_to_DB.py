@@ -14,7 +14,7 @@ for filename in os.listdir(folder_path):
 
         df.insert(0, 'field_id', 101)
 
-        date_from_file = filename.split('.')[0]  # Assuming the date is the file name without extension
+        date_from_file = filename.split('.')[0]  
         df.insert(1, 'date', date_from_file)
 
         cart_id = filename.replace('Cart', '').replace('.csv', '')
