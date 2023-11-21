@@ -28,8 +28,8 @@ The front end is a user-friendly web application which is created by Python Flas
 * field.xlsx - Raw data file for field 
 * Carts_2022.xlsx - Raw data file for 2022 carts - salinas
 * Spence_picker_2022.xlsx - Raw data file 2022 pickers - salinas
-* yield data - csv files with yield generation of each day.
 * Harvest 2022 - Files with raw data for the 2022 harvest 
+* yield data - csv files with yield generation of each day.
 
 # Front-end
 
