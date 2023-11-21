@@ -2,7 +2,7 @@ import pandas as pd
 import os
 from sqlalchemy import create_engine
 
-folder_path = 'C:\Users\maste\Desktop\Raw Data 2022\Yield_2022\yield plot'
+folder_path = 'C:\Users\maste\Desktop\Raw Data 2022\Yield_2022\yield data'
 
 all_data = []
 for filename in os.listdir(folder_path):
@@ -23,7 +23,7 @@ db_name = 'processed'
 connection_string = f"mysql+mysqlconnector://{db_username}:{db_password}@{db_endpoint}/{db_name}"
 engine = create_engine(connection_string)
 
-combined_df.to_sql('process', engine, if_exists='replace', index=False)
+combined_df.to_sql('proce', engine, if_exists='replace', index=False)
 
 local_csv_path = 'C:\Users\maste\Desktop\Raw Data 2022\Yield_2022\yield plot\combined_data.csv'
 combined_df.to_csv(local_csv_path, index=False)
