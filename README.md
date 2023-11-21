@@ -50,7 +50,7 @@ These steps should get the front-end up and running
 
 * Once you have all the raw data (field.xlsx, carts_2022.xlsx, Spence_picker_2022.xlsx, Harvest 2022)
 * Run Query_harvest_DB and Query_processed_DB in MYSQL Workbench to create the Harvest and Processed databases.
-* Once you have the databases created, run field_to_DB.py with field.xlsx file to update field table, run picker_to_DB.py with Spence_Picker_2022.xlsx file to update picker table, run carts_to_DB.py with Carts_2022.xlsx file to update cart table, and finally run raw_data_to_DB.py with Harvest 2022 file to update raw_data table. This is to update the Harvest database.
+* Once you have the databases created, run field_to_DB.py with field.xlsx file to update field table, run picker_to_DB.py with Spence_Picker_2022.xlsx file to update picker table, run carts_to_DB.py with Carts_2022.xlsx file to update cart table, and finally run raw_data_to_DB.py with Harvest 2022 folder to update raw_data table. This is to update the Harvest database.
 * Once the database is all set and populated, run select_inputs.py python file to select the appropriate inputs needed to run the yield map generation code
 * Once the yield maps are generated, run processed_data.py with yield data folder to upload the generated yield map into the proces table in the processed database and also to create a table locally.
 
